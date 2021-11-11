@@ -18,6 +18,6 @@ public class Panel {
     }
 
     public void toggle() {
-        lights[0][0] = true;
+        turnOn(0, 0);
     }
 }
