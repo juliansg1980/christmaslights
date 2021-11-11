@@ -17,7 +17,7 @@ public class Panel {
         lights[xCoordinate][yCoordinate] = false;
     }
 
-    public void toggle() {
-        turnOn(0, 0);
+    public void toggle(int xCoordinate, int yCoordinate) {
+        turnOn(xCoordinate, yCoordinate);
     }
 }
