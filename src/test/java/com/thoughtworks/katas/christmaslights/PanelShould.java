@@ -31,7 +31,7 @@ public class PanelShould {
     public void turn_off_a_light(int xCoordinate, int yCoordinate) {
         TurnOnFirstLight(xCoordinate, yCoordinate);
 
-        panel.turnOff();
+        panel.turnOff(xCoordinate, yCoordinate);
 
         assertFalse(getLightStateFor(xCoordinate, yCoordinate));
     }
