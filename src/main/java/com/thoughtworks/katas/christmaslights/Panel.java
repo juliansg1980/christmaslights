@@ -18,9 +18,13 @@ public class Panel {
     }
 
     public void toggle(int xCoordinate, int yCoordinate) {
-        if (lights[0][0])
+        if (isLightOn())
             turnOff(0, 0);
         else
             turnOn(xCoordinate, yCoordinate);
+    }
+
+    private boolean isLightOn() {
+        return lights[0][0] == true;
     }
 }
