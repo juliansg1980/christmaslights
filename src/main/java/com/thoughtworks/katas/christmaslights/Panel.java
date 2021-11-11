@@ -14,5 +14,6 @@ public class Panel {
     }
 
     public void turnOff() {
+        lights[0][0] = false;
     }
 }
