@@ -21,8 +21,6 @@ public class PanelShould {
     @ParameterizedTest
     @CsvSource({"0,0", "999,0", "0, 999", "999, 999"})
     public void turn_on_a_light(int xCoordinate, int yCoordinate) {
-        TestPanel panel = new TestPanel();
-
         panel.turnOn(xCoordinate, yCoordinate);
 
         assertTrue(panel.getLights()[xCoordinate][yCoordinate]);
