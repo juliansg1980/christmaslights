@@ -23,7 +23,7 @@ public class PanelShould {
     public void turn_on_a_light(int xCoordinate, int yCoordinate) {
         panel.turnOn(xCoordinate, yCoordinate);
 
-        assertTrue(getLightState(xCoordinate, yCoordinate));
+        assertTrue(getLightStateFor(xCoordinate, yCoordinate));
     }
 
     @Test
@@ -32,10 +32,10 @@ public class PanelShould {
 
         panel.turnOff();
 
-        assertFalse(getLightState(0, 0));
+        assertFalse(getLightStateFor(0, 0));
     }
 
-    private boolean getLightState(int xCoordinate, int yCoordinate) {
+    private boolean getLightStateFor(int xCoordinate, int yCoordinate) {
         return panel.getLights()[xCoordinate][yCoordinate];
     }
 
