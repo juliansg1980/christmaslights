@@ -46,13 +46,14 @@ public class PanelShould {
         assertTrue(getLightStateFor(xCoordinate,yCoordinate));
     }
 
-    @Test
-    public void toggle_a_light_when_the_light_is_on() {
-        TurnOnLightForTest(0, 0);
+    @ParameterizedTest
+    @CsvSource({"0,0"})
+    public void toggle_a_light_when_the_light_is_on(int xCoordinate, int yCoordinate) {
+        TurnOnLightForTest(xCoordinate, yCoordinate);
 
-        panel.toggle(0, 0);
+        panel.toggle(xCoordinate, yCoordinate);
 
-        assertFalse(getLightStateFor(0, 0));
+        assertFalse(getLightStateFor(xCoordinate, yCoordinate));
     }
 
     private void TurnOffLightForTest(int xCoordinate, int yCoordinate) {
