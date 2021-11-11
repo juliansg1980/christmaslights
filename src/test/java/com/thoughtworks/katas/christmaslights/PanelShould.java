@@ -7,11 +7,11 @@ import static org.junit.Assert.assertTrue;
 
 public class PanelShould {
     @ParameterizedTest
-    @CsvSource({"0,0"})
+    @CsvSource({"0,0", "999,0"})
     public void turn_on_a_light(int xCoordinate, int yCoordinate) {
         TestPanel panel = new TestPanel();
 
-        panel.turnOn();
+        panel.turnOn(xCoordinate);
 
         assertTrue(panel.getLights()[xCoordinate][yCoordinate]);
     }
