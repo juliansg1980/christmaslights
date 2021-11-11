@@ -1,8 +1,11 @@
 package com.thoughtworks.katas.christmaslights;
 
+
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 public class PanelShould {
@@ -14,6 +17,16 @@ public class PanelShould {
         panel.turnOn(xCoordinate, yCoordinate);
 
         assertTrue(panel.getLights()[xCoordinate][yCoordinate]);
+    }
+
+    @Test
+    public void turn_off_a_light() {
+        TestPanel panel = new TestPanel();
+        panel.getLights()[0][0] = true;
+
+        panel.turnOff();
+
+        assertFalse(panel.getLights()[0][0]);
     }
 
     private class TestPanel extends Panel {

@@ -12,4 +12,7 @@ public class Panel {
     public void turnOn(int xCoordinate, int yCoordinate) {
         lights[xCoordinate][yCoordinate] = true;
     }
+
+    public void turnOff() {
+    }
 }
