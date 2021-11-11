@@ -28,11 +28,15 @@ public class PanelShould {
 
     @Test
     public void turn_off_a_light() {
-        panel.getLights()[0][0] = true;
+        TurnOnFirstLight();
 
         panel.turnOff();
 
         assertFalse(panel.getLights()[0][0]);
+    }
+
+    private void TurnOnFirstLight() {
+        panel.getLights()[0][0] = true;
     }
 
     private class TestPanel extends Panel {
