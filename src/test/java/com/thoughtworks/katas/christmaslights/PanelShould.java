@@ -36,6 +36,19 @@ public class PanelShould {
         assertFalse(getLightStateFor(xCoordinate, yCoordinate));
     }
 
+    @Test
+    public void toggle_a_light_when_the_light_is_off() {
+        TurnOffLightForTest();
+
+        panel.toggle();
+
+        assertTrue(getLightStateFor(0,0));
+    }
+
+    private void TurnOffLightForTest() {
+        panel.getLights()[0][0] = false;
+    }
+
     private boolean getLightStateFor(int xCoordinate, int yCoordinate) {
         return panel.getLights()[xCoordinate][yCoordinate];
     }
