@@ -2,7 +2,6 @@ package com.thoughtworks.katas.christmaslights;
 
 import org.junit.Test;
 
-import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
 public class PanelShould {
