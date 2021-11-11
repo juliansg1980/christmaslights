@@ -35,8 +35,8 @@ public class PanelShould {
         assertFalse(getLightState(0, 0));
     }
 
-    private boolean getLightState(int i, int i2) {
-        return panel.getLights()[i][i2];
+    private boolean getLightState(int xCoordinate, int yCoordinate) {
+        return panel.getLights()[xCoordinate][yCoordinate];
     }
 
     private void TurnOnFirstLight() {
