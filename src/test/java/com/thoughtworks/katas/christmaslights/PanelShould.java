@@ -37,7 +37,7 @@ public class PanelShould {
     }
 
     @ParameterizedTest
-    @CsvSource({"0,0", "0,999"})
+    @CsvSource({"0,0", "0,999", "999,0"})
     public void toggle_a_light_when_the_light_is_off(int xCoordinate, int yCoordinate) {
         TurnOffLightForTest(xCoordinate,yCoordinate);
 
