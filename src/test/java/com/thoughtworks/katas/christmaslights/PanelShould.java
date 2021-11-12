@@ -69,9 +69,9 @@ public class PanelShould {
 
         panel.turnOn(givenAStartCoordinate, givenAnEndCoordinate);
 
-        for (int i = startX; i <= endX ; i++) {
-            for (int j = startY; j <= endY ; j++) {
-                assertTrue(getLightStateFor(new Coordinate(i, j)));
+        for (int xPosition = startX; xPosition <= endX ; xPosition++) {
+            for (int yPosition = startY; yPosition <= endY ; yPosition++) {
+                assertTrue(getLightStateFor(new Coordinate(xPosition, yPosition)));
             }
         }
     }
