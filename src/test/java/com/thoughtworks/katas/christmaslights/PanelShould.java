@@ -2,6 +2,7 @@ package com.thoughtworks.katas.christmaslights;
 
 
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
@@ -58,6 +59,19 @@ public class PanelShould {
         panel.toggle(givenACoordinate);
 
         assertFalse(getLightStateFor(givenACoordinate));
+    }
+
+    @Test
+    public void turn_a_range_of_lights_on(){
+        Coordinate givenAStartCoordinate = new Coordinate(0, 0);
+        Coordinate givenAnEndCoordinate = new Coordinate(1, 1);
+
+        panel.turnOn(givenAStartCoordinate, givenAnEndCoordinate);
+
+        assertTrue(getLightStateFor(new Coordinate(0, 0)));
+        assertTrue(getLightStateFor(new Coordinate(0, 1)));
+        assertTrue(getLightStateFor(new Coordinate(1, 0)));
+        assertTrue(getLightStateFor(new Coordinate(1, 1)));
     }
 
     private void TurnOffLightForTest(Coordinate coordinate) {

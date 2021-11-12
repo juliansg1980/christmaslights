@@ -27,4 +27,11 @@ public class Panel {
     private boolean isLightOn(Coordinate coordinate) {
         return lights[coordinate.getX()][coordinate.getY()] == true;
     }
+
+    public void turnOn(Coordinate startCoordinate, Coordinate endCoordinate) {
+        turnOn(new Coordinate(0,0));
+        turnOn(new Coordinate(0,1));
+        turnOn(new Coordinate(1,0));
+        turnOn(new Coordinate(1,1));
+    }
 }
