@@ -37,6 +37,13 @@ public class Panel {
     }
 
     public void toggle(Coordinate coordinate) {
-        turnOn(coordinate);
+        if (isLightOn(coordinate))
+            turnOff(coordinate);
+        else
+            turnOn(coordinate);
+    }
+
+    private boolean isLightOn(Coordinate coordinate) {
+        return lights[coordinate.getX()][coordinate.getY()] == true;
     }
 }
