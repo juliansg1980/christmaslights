@@ -35,4 +35,8 @@ public class Panel {
             }
         }
     }
+
+    public void turnOff(Coordinate startCoordinate, Coordinate endCoordinate) {
+
+    }
 }
