@@ -61,17 +61,18 @@ public class PanelShould {
         assertFalse(getLightStateFor(givenACoordinate));
     }
 
-    @Test
-    public void turn_a_range_of_lights_on(){
-        Coordinate givenAStartCoordinate = new Coordinate(0, 0);
-        Coordinate givenAnEndCoordinate = new Coordinate(1, 1);
+    @ParameterizedTest
+    @CsvSource({"0,1"})
+    public void turn_a_range_of_lights_on(int start, int end){
+        Coordinate givenAStartCoordinate = new Coordinate(start, start);
+        Coordinate givenAnEndCoordinate = new Coordinate(end, end);
 
         panel.turnOn(givenAStartCoordinate, givenAnEndCoordinate);
 
-        assertTrue(getLightStateFor(new Coordinate(0, 0)));
-        assertTrue(getLightStateFor(new Coordinate(0, 1)));
-        assertTrue(getLightStateFor(new Coordinate(1, 0)));
-        assertTrue(getLightStateFor(new Coordinate(1, 1)));
+        assertTrue(getLightStateFor(new Coordinate(start, start)));
+        assertTrue(getLightStateFor(new Coordinate(start, end)));
+        assertTrue(getLightStateFor(new Coordinate(end, start)));
+        assertTrue(getLightStateFor(new Coordinate(end, end)));
     }
 
     @Test
