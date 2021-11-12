@@ -37,9 +37,10 @@ public class Panel {
     }
 
     public void turnOff(Coordinate startCoordinate, Coordinate endCoordinate) {
-        turnOff(new Coordinate(0,0));
-        turnOff(new Coordinate(0,1));
-        turnOff(new Coordinate(1,0));
-        turnOff(new Coordinate(1,1));
+        for (int xPosition = startCoordinate.getX(); xPosition <= endCoordinate.getX(); xPosition++) {
+            for (int yPosition = startCoordinate.getY(); yPosition <= endCoordinate.getY(); yPosition++) {
+                turnOff(new Coordinate(xPosition, yPosition));
+            }
+        }
     }
 }
