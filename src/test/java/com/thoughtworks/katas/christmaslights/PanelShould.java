@@ -42,7 +42,7 @@ public class PanelShould {
     @CsvSource({"0,0", "0,999", "999,0", "999,999"})
     public void toggle_a_light_when_the_light_is_off(int xCoordinate, int yCoordinate) {
         Coordinate givenACoordinate = new Coordinate(xCoordinate, yCoordinate);
-        TurnOffLightForTest(xCoordinate,yCoordinate);
+        TurnOffLightForTest(givenACoordinate);
 
         panel.toggle(givenACoordinate);
 
@@ -60,8 +60,8 @@ public class PanelShould {
         assertFalse(getLightStateFor(givenACoordinate));
     }
 
-    private void TurnOffLightForTest(int xCoordinate, int yCoordinate) {
-        panel.getLights()[xCoordinate][yCoordinate] = false;
+    private void TurnOffLightForTest(Coordinate coordinate) {
+        panel.getLights()[coordinate.getX()][coordinate.getY()] = false;
     }
 
     private boolean getLightStateFor(Coordinate coordinate) {
