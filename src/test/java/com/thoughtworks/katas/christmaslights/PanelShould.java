@@ -80,7 +80,6 @@ public class PanelShould {
     public void turn_a_range_of_lights_off(){
         Coordinate givenAStartCoordinate = new Coordinate(0, 0);
         Coordinate givenAnEndCoordinate = new Coordinate(1, 1);
-
         TurnOnLightForTest(new Coordinate(0, 0));
         TurnOnLightForTest(new Coordinate(0, 1));
         TurnOnLightForTest(new Coordinate(1, 0));
@@ -98,7 +97,6 @@ public class PanelShould {
     public void turn_another_range_of_lights_off(){
         Coordinate givenAStartCoordinate = new Coordinate(998, 998);
         Coordinate givenAnEndCoordinate = new Coordinate(999, 999);
-
         TurnOnLightForTest(new Coordinate(998, 998));
         TurnOnLightForTest(new Coordinate(998, 999));
         TurnOnLightForTest(new Coordinate(999, 998));
