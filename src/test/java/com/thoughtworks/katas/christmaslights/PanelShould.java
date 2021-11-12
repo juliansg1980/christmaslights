@@ -31,7 +31,7 @@ public class PanelShould {
     @CsvSource({"0,0", "0,999", "999,0", "999,999"})
     public void turn_off_a_light(int xCoordinate, int yCoordinate) {
         Coordinate givenACoordinate = new Coordinate(xCoordinate, yCoordinate);
-        TurnOnLightForTest(xCoordinate, yCoordinate);
+        TurnOnLightForTest(givenACoordinate);
 
         panel.turnOff(givenACoordinate);
 
@@ -53,7 +53,7 @@ public class PanelShould {
     @CsvSource({"0,0", "0,999", "999,0", "999,999"})
     public void toggle_a_light_when_the_light_is_on(int xCoordinate, int yCoordinate) {
         Coordinate givenACoordinate = new Coordinate(xCoordinate, yCoordinate);
-        TurnOnLightForTest(xCoordinate, yCoordinate);
+        TurnOnLightForTest(givenACoordinate);
 
         panel.toggle(givenACoordinate);
 
@@ -68,8 +68,8 @@ public class PanelShould {
         return panel.getLights()[coordinate.getX()][coordinate.getY()];
     }
 
-    private void TurnOnLightForTest(int xCoordinate, int yCoordinate) {
-        panel.getLights()[xCoordinate][yCoordinate] = true;
+    private void TurnOnLightForTest(Coordinate coordinate) {
+        panel.getLights()[coordinate.getX()][coordinate.getY()] = true;
     }
 
     private class TestPanel extends Panel {
