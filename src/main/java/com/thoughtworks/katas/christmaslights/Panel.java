@@ -29,9 +29,10 @@ public class Panel {
     }
 
     public void turnOn(Coordinate startCoordinate, Coordinate endCoordinate) {
-        turnOn(new Coordinate(0,0));
-        turnOn(new Coordinate(0,1));
-        turnOn(new Coordinate(1,0));
-        turnOn(new Coordinate(1,1));
+        for (int i=startCoordinate.getX(); i<=endCoordinate.getX(); i++){
+            for (int j=startCoordinate.getY(); j<=endCoordinate.getY(); j++){
+                turnOn(new Coordinate(i,j));
+            }
+        }
     }
 }
