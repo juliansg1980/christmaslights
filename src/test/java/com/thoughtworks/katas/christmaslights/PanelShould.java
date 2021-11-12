@@ -96,24 +96,6 @@ public class PanelShould {
         }
     }
 
-    @Test
-    public void turn_another_range_of_lights_off(){
-        Coordinate givenAStartCoordinate = new Coordinate(998, 998);
-        Coordinate givenAnEndCoordinate = new Coordinate(999, 999);
-        TurnOnLightForTest(new Coordinate(998, 998));
-        TurnOnLightForTest(new Coordinate(998, 999));
-        TurnOnLightForTest(new Coordinate(999, 998));
-        TurnOnLightForTest(new Coordinate(999, 999));
-
-        panel.turnOff(givenAStartCoordinate, givenAnEndCoordinate);
-
-        assertFalse(getLightStateFor(new Coordinate(998, 998)));
-        assertFalse(getLightStateFor(new Coordinate(998, 999)));
-        assertFalse(getLightStateFor(new Coordinate(999, 998)));
-        assertFalse(getLightStateFor(new Coordinate(999, 999)));
-    }
-
-
     private void TurnOffLightForTest(Coordinate coordinate) {
         panel.getLights()[coordinate.getX()][coordinate.getY()] = false;
     }
