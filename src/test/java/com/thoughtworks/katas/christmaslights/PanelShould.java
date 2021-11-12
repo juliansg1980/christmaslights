@@ -62,7 +62,7 @@ public class PanelShould {
     }
 
     @ParameterizedTest
-    @CsvSource({"0,0, 1, 1", "998, 998, 999, 999"})
+    @CsvSource({"0,0, 1, 1", "998, 998, 999, 999","0,0,999,999"})
     public void turn_a_range_of_lights_on(int startX, int startY, int endX, int endY){
         Coordinate givenAStartCoordinate = new Coordinate(startX, startY);
         Coordinate givenAnEndCoordinate = new Coordinate(endX, endY);
