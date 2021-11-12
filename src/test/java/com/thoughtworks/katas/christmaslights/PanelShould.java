@@ -2,7 +2,6 @@ package com.thoughtworks.katas.christmaslights;
 
 
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
@@ -25,7 +24,7 @@ public class PanelShould {
 
         panel.turnOn(givenACoordinate);
 
-        assertTrue(getLightStateFor(xCoordinate, yCoordinate));
+        assertTrue(getLightStateFor(givenACoordinate));
     }
 
     @ParameterizedTest
@@ -36,7 +35,7 @@ public class PanelShould {
 
         panel.turnOff(givenACoordinate);
 
-        assertFalse(getLightStateFor(xCoordinate, yCoordinate));
+        assertFalse(getLightStateFor(givenACoordinate));
     }
 
     @ParameterizedTest
@@ -47,7 +46,7 @@ public class PanelShould {
 
         panel.toggle(givenACoordinate);
 
-        assertTrue(getLightStateFor(xCoordinate,yCoordinate));
+        assertTrue(getLightStateFor(givenACoordinate));
     }
 
     @ParameterizedTest
@@ -58,15 +57,15 @@ public class PanelShould {
 
         panel.toggle(givenACoordinate);
 
-        assertFalse(getLightStateFor(xCoordinate, yCoordinate));
+        assertFalse(getLightStateFor(givenACoordinate));
     }
 
     private void TurnOffLightForTest(int xCoordinate, int yCoordinate) {
         panel.getLights()[xCoordinate][yCoordinate] = false;
     }
 
-    private boolean getLightStateFor(int xCoordinate, int yCoordinate) {
-        return panel.getLights()[xCoordinate][yCoordinate];
+    private boolean getLightStateFor(Coordinate coordinate) {
+        return panel.getLights()[coordinate.getX()][coordinate.getY()];
     }
 
     private void TurnOnLightForTest(int xCoordinate, int yCoordinate) {
