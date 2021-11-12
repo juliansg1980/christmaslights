@@ -37,6 +37,9 @@ public class Panel {
     }
 
     public void turnOff(Coordinate startCoordinate, Coordinate endCoordinate) {
-
+        turnOff(new Coordinate(0,0));
+        turnOff(new Coordinate(0,1));
+        turnOff(new Coordinate(1,0));
+        turnOff(new Coordinate(1,1));
     }
 }
