@@ -76,21 +76,24 @@ public class PanelShould {
         }
     }
 
-    @Test
-    public void turn_a_range_of_lights_off(){
-        Coordinate givenAStartCoordinate = new Coordinate(0, 0);
-        Coordinate givenAnEndCoordinate = new Coordinate(1, 1);
-        TurnOnLightForTest(new Coordinate(0, 0));
-        TurnOnLightForTest(new Coordinate(0, 1));
-        TurnOnLightForTest(new Coordinate(1, 0));
-        TurnOnLightForTest(new Coordinate(1, 1));
+    @ParameterizedTest
+    @CsvSource({"0,0, 1, 1", "998, 998, 999, 999","0,0,999,999"})
+    public void turn_a_range_of_lights_off(int startX, int startY, int endX, int endY){
+        Coordinate givenAStartCoordinate = new Coordinate(startX, startY);
+        Coordinate givenAnEndCoordinate = new Coordinate(endX, endY);
+        for (int xPosition = startX; xPosition <= endX ; xPosition++) {
+            for (int yPosition = startY; yPosition <= endY ; yPosition++) {
+                TurnOnLightForTest(new Coordinate(xPosition, yPosition));
+            }
+        }
 
         panel.turnOff(givenAStartCoordinate, givenAnEndCoordinate);
 
-        assertFalse(getLightStateFor(new Coordinate(0, 0)));
-        assertFalse(getLightStateFor(new Coordinate(0, 1)));
-        assertFalse(getLightStateFor(new Coordinate(1, 0)));
-        assertFalse(getLightStateFor(new Coordinate(1, 1)));
+        for (int xPosition = startX; xPosition <= endX ; xPosition++) {
+            for (int yPosition = startY; yPosition <= endY ; yPosition++) {
+                assertFalse(getLightStateFor(new Coordinate(xPosition, yPosition)));
+            }
+        }
     }
 
     @Test
