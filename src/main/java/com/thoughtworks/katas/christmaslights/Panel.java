@@ -9,25 +9,6 @@ public class Panel {
         lights = new boolean[xLength][yLength];
     }
 
-    public void turnOn(int xCoordinate, int yCoordinate) {
-        lights[xCoordinate][yCoordinate] = true;
-    }
-
-    public void turnOff(int xCoordinate, int yCoordinate) {
-        lights[xCoordinate][yCoordinate] = false;
-    }
-
-    public void toggle(int xCoordinate, int yCoordinate) {
-        if (isLightOn(xCoordinate, yCoordinate))
-            turnOff(xCoordinate, yCoordinate);
-        else
-            turnOn(xCoordinate, yCoordinate);
-    }
-
-    private boolean isLightOn(int xCoordinate, int yCoordinate) {
-        return lights[xCoordinate][yCoordinate] == true;
-    }
-
     public void turnOn(Coordinate lightToTurnOn) {
         lights[lightToTurnOn.getX()][lightToTurnOn.getY()] = true;
     }
