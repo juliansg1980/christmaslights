@@ -35,4 +35,8 @@ public class Panel {
     public void turnOff(Coordinate coordinate) {
         lights[coordinate.getX()][coordinate.getY()] = false;
     }
+
+    public void toggle(Coordinate coordinate) {
+        turnOn(coordinate);
+    }
 }
